@@ -1,0 +1,31 @@
+.wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #2f5bb7;
+	width: 100vw;
+	height: 100vh;
+}
+
+form{
+	padding: 20px;
+	width: 400px;
+}
+
+input,button{
+	display: block;
+	margin:20px 0;
+	border:none;
+	border-radius: 2px;
+	font-size: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+button{
+	background-color: #2196F3;
+    color: #fff;
+    cursor: pointer;
+}
+

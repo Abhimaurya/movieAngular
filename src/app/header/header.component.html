@@ -1,0 +1,14 @@
+<header class="header">
+	<span>
+		Movies List
+	</span>
+	<form *ngIf="!isLogin" (submit)="handleLogin()">
+		<input type="email" placeholder="Email" required  name="email" />
+		<input type="password" placeholder="Password" required pattern="[^\s]{5,}" title="Invalid password, minum 5 characters and no spaces" name="password" />
+		<button type="submit">Login</button>
+	<nav>
+	  <a routerLink="/register">Register</a>
+	</nav>
+	</form>
+
+</header>

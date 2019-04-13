@@ -1,0 +1,31 @@
+.header{
+  padding:10px;
+  font-size: 20px;
+  color:white;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav{
+	display: inline-block;
+}
+
+input,button{
+	padding: 10px;
+	border:none;
+	border-radius: 2px;
+	margin-right: 10px;
+	font-size: inherit;
+}
+
+a{
+	color: #fff;
+}
+
+button{
+	background-color: #2196F3;
+    color: #fff;
+    cursor: pointer;
+}

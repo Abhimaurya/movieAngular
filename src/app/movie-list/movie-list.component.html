@@ -1,0 +1,44 @@
+<div>
+	<app-header [isLogin]="isLogin" (login)="login()"></app-header>
+	<div>
+		<div class="flex table-header">
+			<div (click)="sort('name')">
+				Title 
+				<span class="arrow-up"></span>
+				<span class="arrow-down"></span>
+			</div>
+			<div (click)="sort('date')">
+				Release date
+				<span class="arrow-up"></span>
+				<span class="arrow-down"></span>
+			</div>
+			<div (click)="sort('rating')">
+				Average rating
+				<span class="arrow-up"></span>
+				<span class="arrow-down"></span>
+			</div>
+			<div (click)="sort('userRating')" *ngIf="isLogin">
+				Your rating
+				<span class="arrow-up"></span>
+				<span class="arrow-down"></span>
+			</div>
+		</div>
+		<div *ngFor="let mov of movies; index as index" class="flex row">
+			<div>{{mov.Title}}</div>
+			<div>{{mov.Date}}</div>
+			<div>{{mov.Rating}}</div>
+			<div *ngIf="isLogin">
+				<span *ngIf="mov.UserRating" >
+					<span *ngFor="let n of getArray(mov.UserRating)">&#9733;</span>
+				</span>
+				<span *ngIf="!mov.UserRating" >
+					<span *ngFor="let n of getArray(5); index as rating" (click)="setRating(index,rating+1)">&#9734;</span>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="pagination">
+		<span (click)="loadMoreMovies('prev')">Previous</span>
+		<span (click)="loadMoreMovies('next')">Next</span>
+	</div>
+</div>
